@@ -4,7 +4,7 @@ We consider neural networks with rational activation functions. The choice of th
 
 For more information, please refer to
 
-- Nicolas Boullé, Yuji Nakatsukasa, and Alex Townsend. "[Rational neural networks](https://arxiv.org/abs/2004.01902)." arXiv preprint arXiv:2004.01902 (2020).
+- Nicolas Boullé, Yuji Nakatsukasa, and Alex Townsend, [Rational neural networks](https://arxiv.org/abs/2004.01902), arXiv preprint arXiv:2004.01902 (2020).
 
 ## Dependencies
 

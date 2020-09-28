@@ -14,10 +14,10 @@ import numpy as np
 
 # Collect the results from ReLU, Sinusoid, Rational networks and plot the errors together
 
-Exact_idn = np.loadtxt("Results/exact_sol.csv", delimiter=',')
-U_relu = np.loadtxt("Results/idn_relu.csv", delimiter=',')
-U_sine = np.loadtxt("Results/idn_sine.csv", delimiter=',')
-U_rat = np.loadtxt("Results/idn_rat.csv", delimiter=',')
+Exact_idn = np.loadtxt("Results/ReLU/exact_sol.csv", delimiter=',')
+U_relu = np.loadtxt("Results/ReLU/idn_relu.csv", delimiter=',')
+U_sine = np.loadtxt("Results/Sine/idn_sine.csv", delimiter=',')
+U_rat = np.loadtxt("Results/Rational_3_2/idn_rat.csv", delimiter=',')
 
 lb_idn = np.array([0.0, -20.0])
 ub_idn = np.array([40.0, 20.0])
@@ -82,4 +82,4 @@ cax = divider.append_axes("right", size="5%", pad=0.05)
 fig.colorbar(h, cax=cax)
 
 # Save the figure
-savefig('Results/identifiers')
+savefig('Results/solution_error')

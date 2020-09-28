@@ -8,14 +8,22 @@ For more information, please refer to
 
 ## Dependencies
 
-The Python packages used in the experiments are listed in the file `requirements.txt`. The main dependencies are TensorFlow (version 1.14) and Keras (version 2.2.4). Please note that we used the GPU version of TensorFlow.
+The Python packages used in the experiments are listed in the file `requirements.txt`. 
+The main dependencies are TensorFlow (version 1.14) and Keras (version 2.2.4). 
+We used the GPU version of TensorFlow: `tensorflow-gpu` for the GAN experiment.
 
 ## Content
 
-- The Python file `RationalLayer.py` contains a TensorFlow implementation of a rational activation function, initialized by default to a type (3,2) approximation to the ReLU function. Other initial coefficients of the rational functions can be provided as parameters.
-- Run the file `GAN/mnist-gan.py` to reproduce the GAN experiment.
-- The files `KdV_relu.py`, `KdV_sine.py`, `KdV_rat.py` in the `Approximation_2d` folder train a ReLU, Sinusoid, and Rational network to interpolate a solution to the KdV equation.
-- The MATLAB file `initial_rational_coeffs.m` can be used to compute different initialization coefficients of the rational activation functions (different type or approximation to other functions than ReLU). It requires the [Chebfun package](https://www.chebfun.org/).
+- The Python file `RationalLayer.py` contains a TensorFlow implementation of a rational activation function, initialized by default to a type (3,2) approximation to the ReLU function. 
+	- Import it using the line `from RationalLayer import RationalLayer` and add a rational layer with `model.add(RationalLayer())`
+	
+	- Other initial coefficients of the rational functions can be provided as parameters or the rational weigths can be shared across the nodes of the layer: `RationalLayer(alpha_initializer, beta_initializer, shared_axes=[1,2,3])`
+
+	- The MATLAB file `initial_rational_coeffs.m` computes different initialization coefficients for rational functions (rationals of different types or initialization near functions other than ReLU). It requires the [Chebfun package](https://www.chebfun.org/).
+
+- In the `Approximation` folder, run `python3 main.py` to reproduce the approximation experiment of the paper.
+
+- In the `GAN` folder, run `python3 mnist-gan.py` to reproduce the GAN experiment of the paper.
 
 ## Citation
 

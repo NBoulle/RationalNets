@@ -1,10 +1,16 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """
 
 @author: Nicolas Boulle
+Code modified from https://keras.io/examples/mnist_acgan/
+
+GAN experiment on MNIST of the paper
+Run the following command to use a rational network:
+python3 mnist_gan.py --rational=True
+
+or a ReLU network:
+python3 mnist_gan.py --rational=False
+
 """
-# Code modified from https://keras.io/examples/mnist_acgan/
 
 from __future__ import print_function
 from collections import defaultdict
@@ -26,14 +32,12 @@ from keras.models import Sequential, Model
 from keras.optimizers import Adam
 from keras.utils.generic_utils import Progbar
 import numpy as np
+import argparse
 
 # Load the Rational Layer
 import os, sys
 sys.path.insert(0, '..')
 from RationalLayer import RationalLayer
-
-# Use rational in the network if True, use ReLU otherwise
-UseRational = True
 
 np.random.seed(1337)
 num_classes = 10
@@ -154,6 +158,13 @@ def build_discriminator():
 
 
 if __name__ == '__main__':
+    
+    # Use rational or ReLU network
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--rational", type=bool, default = True)
+    args, _ = parser.parse_known_args()
+    UseRational = args.rational
+    
     # batch and latent size taken from the paper
     epochs = 100
     batch_size = 100
@@ -168,10 +179,8 @@ if __name__ == '__main__':
         path = 'Results_rational'
     else:
         path = 'Results_relu'
-    try:
+    if not os.path.exists(path):
         os.mkdir(path)
-    except:
-        pass
     path = path + '/'
     
     # build the discriminator

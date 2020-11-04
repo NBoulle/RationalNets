@@ -21,9 +21,14 @@ We used the GPU version of TensorFlow: `tensorflow-gpu` for the GAN experiment.
 
 	- The MATLAB file `initial_rational_coeffs.m` computes different initialization coefficients for rational functions (rationals of different types or initialization near functions other than ReLU). It requires the [Chebfun package](https://www.chebfun.org/).
 
+- The folder `PyTorch implementation` contains a PyTorch implementation of the rational layer together with a 1D approximation experiment showing how to use the code.
+
 - In the `Approximation` folder, run `python3 main.py` to reproduce the approximation experiment of the paper.
 
 - In the `GAN` folder, run `python3 mnist-gan.py` to reproduce the GAN experiment of the paper.
+
+## Contributor
+- Mario Casado (https://github.com/Lezcano): PyTorch implementation
 
 ## Citation
 

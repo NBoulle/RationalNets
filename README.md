@@ -33,10 +33,13 @@ We used the GPU version of TensorFlow: `tensorflow-gpu` for the GAN experiment.
 ## Citation
 
 ```
-@article{boulle2020rational,
+@inproceedings{boulle2020rational,
   title={Rational neural networks},
   author={Boull{\'e}, Nicolas and Nakatsukasa, Yuji and Townsend, Alex},
-  journal={arXiv preprint arXiv:2004.01902},
-  year={2020}
+  booktitle = {Advances in Neural Information Processing Systems},
+  volume = {33},
+  pages = {14243--14253},
+  year={2020},
+  url = {https://proceedings.neurips.cc/paper/2020/file/a3f390d88e4c41f2747bfa2f1b5f87db-Paper.pdf}
 }
 ```
